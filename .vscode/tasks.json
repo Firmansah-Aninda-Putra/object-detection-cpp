@@ -1,0 +1,36 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe build active file",
+            "command": "C:/msys64/ucrt64/bin/g++.exe",
+            "args": [
+                "-O3",  // atau "-O3" untuk optimasi lebih agresif
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "-IC:/msys64/ucrt64/include/opencv4",
+                "-LC:/msys64/ucrt64/lib",
+                "-lopencv_core",
+                "-lopencv_imgproc",
+                "-lopencv_imgcodecs",
+                "-lopencv_highgui",
+                "-lopencv_dnn",
+                "-lopencv_videoio"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
